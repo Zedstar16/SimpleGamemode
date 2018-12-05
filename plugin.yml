@@ -1,0 +1,50 @@
+name: SimpleGamemode
+main: Zedstar16\SimpleGamemode\Main
+version: 0.1
+api: 3.0.0
+load: POSTWORLD
+author: Zedstar16
+description: Simple Gamemode plugin that makes changing gamemode easier
+
+
+commands:
+ gms:
+  description: "Switch gamemode to Survival"
+  usage: "/gms [player]"
+  permission: gms.command
+
+ gmc:
+   description: "Switch gamemode to creative"
+   usage: "/gms [player]"
+   permission: gmc.command
+
+ gmspc:
+   description: "Switch gamemode to Spectator"
+   usage: "/gms [player]"
+   permission: gmspc.command
+
+
+permissions:
+ gms.other:
+   default: true
+   description: "allows giving gms to others"
+   children:
+    gms.command:
+     default: op
+     description: "gms access"
+
+ gmc.other:
+   default: op
+   description: "allows giving gmc to others"
+   children:
+    gmc.command:
+     default: op
+     description: "gmc access"
+
+ gmspc.other:
+   default: op
+   description: "allows giving gmspc to others"
+   children:
+    gmspc.command:
+     default: op
+     description: "gmspc access"
